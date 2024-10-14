@@ -62,7 +62,13 @@
   * Note: $\%$ represends the 'mod' operators
 * Let $Y$ = { $p_1$ winning }
 * $P(Y) = \sum _{i \in \{i \in \mathbb{N}: i \% 2 = 1 \}} p_X(i)$
-  * TODO: ?? How do I simplify this? 
+* $P(Y) = \sum _{i = 0}^\infty (1-p_1)^i (1-p_2)^i p_1$
+  * For simplification, let $z = (1-p_1)(1-p_2), 0 < z < 1$
+    $\\ \to z = 1 + p_1 p_2 - p_1 - p_2$
+* $P(Y) = p_1 \sum _{i = 0}^\infty z^i$
+* $P(Y) = p_1 * \frac{1}{1 - z}$
+* $P(Y) = \frac{p_1}{1 - (1 + p_1 p_2 - p_1 - p_2)}$
+* $P(Y) = \frac{p_1}{p_1 + p_2 - p_1 p_2}$
 
 # 3: Problem 18, Page 65
 * $X$ represents the number of failures up to the $r$-th success
