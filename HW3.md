@@ -65,13 +65,29 @@
   * TODO: ?? How do I simplify this? 
 
 # 3: Problem 18, Page 65
-??
+* $X$ represents the number of failures up to the $r$-th success
+* Let $k$ be the number of failures
+* We have $k + r$ attempts, where the last attempt must be a success
+* For the other $k + r - 1$ attempts, we must choose $r - 1$ to be successful and the remainder to be failures
+* $p_X(k) = \binom{k + r - 1}{r - 1}p^r(1 - p)^k$
 
 # 4: Problem 24, Page 66
-??
+* Each box contains $n$ matches
+* $X$ represents the number of matches in the other box after using up one box
+* Let $k$ be the number of matches in the other box
+* You must have used up $2n - k$ matches to get to this point
+* You can either use up all matches from the left box or the right box
+* $p_X(k) = [\binom{2n}{n, n - k} + \binom{2n}{n - k, n}] * .5^{2n-k}$
+* $p_X(k) = 2\binom{2n}{n, n - k} * .5^{2n-k}$
 
 # 5: Problem 26, Page 66
-??
+* Let $X$ = { never being trapped }
+* Let $Y$ = { getting trapped only once }
+* Let $Z$ = { getting trapped only twice }
+* He plays this game $5 * 52 * 10 = 2600$ times
+* $P(X) = (\frac{9999}{10000})^{2600}$
+* $P(Y) = \binom{2600}{1}(\frac{1}{10000})(\frac{9999}{10000})^{2599}$
+* $P(Z) = \binom{2600}{2}(\frac{1}{10000})^2(\frac{9999}{10000})^{2598}$
 
 # 6
 ### Q: Suppose a certain disease is twice as likely to develop when someone smokes as compared to when they do not smoke. If 32 percent of people are smokers, what percentage of people having the disease are smokers?
@@ -91,4 +107,12 @@
 
 # 7
 ### Q: Three cooks labeled A, B, and C can each bake a special cake, but with different levels of skill, and sometimes they fail to successfully bake the cake. When the cooks try to bake the cake, the failure probabilities are respectively 0.02, 0.03, 0.05. In the restaurant where they work, A bakes this cake 50% of the time, B bakes it 30% of the time, and C bakes it 20% of the time. What proportion of the failures are caused by A?
-??
+* Let $X$ = { bake the cake at the restaurant }
+* Let $Y$ = { bakes cake successfully }
+* Let $A$ = { chef A bakes cake }
+* Let $B$ = { chef B bakes cake }
+* Let $C$ = { chef C bakes cake }
+* $P(Y|A) = .98, P(Y|B) = .97, P(Y|C) = .95$
+* $P(Y|A \cap X) = .5, P(Y|B \cap X) = .3, P(Y|C \cap X) = .2$
+* $P(A|Y \cap X) =\ ?$
+* TODO: ?? no idea how to do this problem?
