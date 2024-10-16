@@ -119,12 +119,16 @@ $$ \to P(X|Y) = \frac{16}{33}p$$
 
 # 7
 ### Q: Three cooks labeled A, B, and C can each bake a special cake, but with different levels of skill, and sometimes they fail to successfully bake the cake. When the cooks try to bake the cake, the failure probabilities are respectively 0.02, 0.03, 0.05. In the restaurant where they work, A bakes this cake 50% of the time, B bakes it 30% of the time, and C bakes it 20% of the time. What proportion of the failures are caused by A?
-* Let $X$ = { bake the cake at the restaurant }
-* Let $Y$ = { bakes cake successfully }
 * Let $A$ = { chef A bakes cake }
+  * Then $P(A) = .5$
 * Let $B$ = { chef B bakes cake }
+  * Then $P(B) = .3$
 * Let $C$ = { chef C bakes cake }
-$$P(Y|A) = .98, P(Y|B) = .97, P(Y|C) = .95$$
-$$P(Y|A \cap X) = .5, P(Y|B \cap X) = .3, P(Y|C \cap X) = .2$$
-$$P(A|Y \cap X) =\ ?$$
-* TODO: ?? no idea how to do this problem?
+  * Then $P(C) = .2$
+* Let $F$ = { failure }
+  * Then $P(F|A) = .02, P(F|B) = .03, P(F|C) = .05$
+$$P(A|F) =\ ?$$
+$$P(A|F) = \frac{P(F|A)P(A)}{P(F)}$$
+$$P(A|F) = \frac{P(F|A)P(A)}{P(F|A)P(A) + P(F|B)P(B) + P(F|C)P(C)}$$
+$$P(A|F) = \frac{.02 * .5}{.02 * .5 + .03 * .3 + .05 * .2}$$
+$$P(A|F) = .34$$
