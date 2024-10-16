@@ -1,46 +1,53 @@
 # 1: Problem 2, Page 64
 * $n = 4$ is the number of fair coin tosses
-* Note: Probability of head is equal to probability of tail
-* I think these are all wrong ??
+* $|\Omega| = 2^4 = 16$
 
 ### a: $X$ represents number of heads before the first tail
-$$p_X(0) = .5$$
-$$p_X(1) = .5 * .5$$
-$$p_X(k) = .5 ^ {k + 1}, k \in [0, 3]$$
-$$F_X(k) = \sum_{i\in [0, k]} p_X(i)$$
-$$F_X(k) = \sum_{i\in [0, k]} .5 ^ {i + 1}$$
-$$F_X(k) = .5 \sum_{i\in [0, k]} .5 ^ {i}$$
-$$F_X(k) = .5 * \frac{1 - .5^{k + 1}}{1 - .5}$$
-$$F_X(k) = .5 * \frac{1 - .5^{k + 1}}{.5}$$
-$$F_X(k) = 1 - .5^{k + 1}$$
+* Let $k$ be the constant number of heads before the first tail
+  * When $k = 0$, possible states are TXXX, there are 8 possible states
+  * When $k = 1$, possible states are HTXX, there are 4 possible states
+  * When $k = 2$, possible states are HHTX, there are 2 possible states
+  * When $k = 3$, possible states are HHHT, there is 1 possible state
+  * When $k = 4$, possible states are HHHH, there is 1 possible state
+
+|$X$|0|1|2|3|4|
+|---|---|---|---|---|---|
+|$p_X(k)$|$\frac{1}{2}$|$\frac{1}{4}$|$\frac{1}{8}$|$\frac{1}{16}$|$\frac{1}{16}$|
+|$F_X(k)$|$\frac{1}{2}$|$\frac{3}{4}$|$\frac{7}{8}$|$\frac{15}{16}$|$1$|
 
 ### b: $Y$ represents number of heads following the first tail
-$$p_Y(0) = .5 * \binom{3}{0} * .5^3 + .5^2 * \binom{2}{0} * .5^2 + .5^3 \binom{1}{0} * .5 + .5^4 = .5$$
-$$p_Y(1) = .5 * \binom{3}{1} * .5^3 + .5^2 * \binom{2}{1} * .5^2 + .5^3 \binom{1}{1} * .5 = .4375$$
-$$p_Y(2) = .5 * \binom{3}{2} * .5^3 + .5^2 * \binom{2}{2} * .5^2 = .25$$
-$$p_Y(3) = .5 * \binom{3}{3} * .5^3 = .0625$$
-$$p_Y(k) = \sum _{i \in [0, 3 - k]} .5^{i + 1} * \binom{3}{3 - i} * .5^{3-i}$$
-$$p_Y(k) = \sum _{i \in [0, 3 - k]} .5^4 * \binom{3}{3 - i}$$
-$$p_Y(k) = .5^4 \sum _{i \in [0, 3 - k]} \binom{3}{3 - i}$$
-$$p_Y(k) = .5^4 \sum _{i \in [0, 3 - k]} \binom{3}{i}$$
-* TODO: ??
+* Let $k$ be the constant number of heads following the first tail
+  * When $k = 0$, possible states are TTTT, HTTT, HHTT, HHHT, HHHH, there are 5 possible states
+  * When $k = 1$, possible states are TTTH, TTHT, THTT, HTTH, HTHT, HHTH, there are 6 possible states
+  * When $k = 2$, possible states are TTHH, THTH, THHT, HTHH, there are 4 possible states
+  * When $k = 3$, possible states are THHH, there is one possible state
 
+|$Y$|0|1|2|3|
+|---|---|---|---|---|
+|$p_X(k)$|$\frac{5}{16}$|$\frac{6}{16}$|$\frac{4}{16}$|$\frac{1}{16}$|
+|$F_X(k)$|$\frac{5}{16}$|$\frac{11}{16}$|$\frac{15}{16}$|$1$|
 
 ### c: $Z$ represents number of heads minus number of tails
-$$p_Z(-4) = \binom{4}{0, 4} * .5^4$$
-$$p_Z(-2) = \binom{4}{1, 3} * .5^4$$
-$$p_Z(0) = \binom{4}{2, 2} * .5^4$$
-$$p_Z(2) = \binom{4}{3, 1} * .5^4$$
-$$p_Z(4) = \binom{4}{4, 0} * .5^4$$
-* TODO: ?? how are we supposed to make this into an actual function?
-  * Need pdf and cdf functions
+$$p_Z(-4) = \binom{4}{0, 4} * .5^4 = \frac{1}{16}$$
+$$p_Z(-2) = \binom{4}{1, 3} * .5^4 = \frac{4}{16}$$
+$$p_Z(0) = \binom{4}{2, 2} * .5^4 = \frac{6}{16}$$
+$$p_Z(2) = \binom{4}{3, 1} * .5^4 = \frac{4}{16}$$
+$$p_Z(4) = \binom{4}{4, 0} * .5^4 = \frac{1}{16}$$
+
+|$Z$|-4|-2|0|2|4|
+|---|---|---|---|---|---|
+|$p_X(k)$|$\frac{1}{16}$|$\frac{4}{16}$|$\frac{6}{16}$|$\frac{4}{16}$|$\frac{1}{16}$|
+|$F_X(k)$|$\frac{1}{16}$|$\frac{5}{16}$|$\frac{11}{16}$|$\frac{15}{16}$|$1$|
 
 ### d: $W$ represents the number of tails times the number of heads
-$$p_W(0) = [\binom{4}{4, 0} + \binom{4}{0, 4}] * .5^4$$
-$$p_W(3) = [\binom{4}{3, 1} + \binom{4}{1, 3}] * .5^4$$
-$$p_W(4) = \binom{4}{2, 2} * .5^4$$
-* TODO: ?? how are we supposed to make this into an actual function?
-  * Need pdf and cdf functions
+$$p_W(0) = [\binom{4}{4, 0} + \binom{4}{0, 4}] * .5^4 = \frac{2}{16}$$
+$$p_W(3) = [\binom{4}{3, 1} + \binom{4}{1, 3}] * .5^4 = \frac{8}{16}$$
+$$p_W(4) = \binom{4}{2, 2} * .5^4 = \frac{6}{16}$$
+
+|$Z$|0|3|4|
+|---|---|---|---|
+|$p_X(k)$|$\frac{2}{16}$|$\frac{8}{16}$|$\frac{6}{16}$|
+|$F_X(k)$|$\frac{2}{16}$|$\frac{10}{16}$|$1$|
 
 # 2: Problem 14, Page 65
 * $X$ represents total number of attempts
@@ -73,12 +80,14 @@ $$p_X(k) = \binom{k + r - 1}{r - 1}p^r(1 - p)^k$$
 
 # 4: Problem 24, Page 66
 * Each box contains $n$ matches
-* $X$ represents the number of matches in the other box after using up one box
+* $X$ represents the number of matches in the other box after DISCOVERING one box is used up
+  * You count the number of matches in the other box once you try to sample from the empty box with a chance of $.5$
 * Let $k$ be the number of matches in the other box
 * You must have used up $2n - k$ matches to get to this point
+* For each match, you have $.5$ chance of sampling it
 * You can either use up all matches from the left box or the right box
-$$p_X(k) = [\binom{2n}{n, n - k} + \binom{2n}{n - k, n}] * .5^{2n-k}$$
-$$p_X(k) = 2\binom{2n}{n, n - k} * .5^{2n-k}$$
+$$p_X(k) = 2\binom{2n - k}{n, n - k} * .5^{2n-k} * .5$$
+$$p_X(k) = \binom{2n - k}{n} * .5^{2n-k}, k \in [0, n]$$
 
 # 5: Problem 26, Page 66
 * Let $X$ = { never being trapped }
