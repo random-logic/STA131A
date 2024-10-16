@@ -12,8 +12,9 @@
 
 |$X$|0|1|2|3|4|
 |---|---|---|---|---|---|
-|$p_X(k)$|$\frac{1}{2}$|$\frac{1}{4}$|$\frac{1}{8}$|$\frac{1}{16}$|$\frac{1}{16}$|
-|$F_X(k)$|$\frac{1}{2}$|$\frac{3}{4}$|$\frac{7}{8}$|$\frac{15}{16}$|$1$|
+|$p_X(k)$|1/2|1/4|1/8|1/16|1/16|
+| $F_X(k)$| 1/2   |  3/4  |  7/8  | 15/16 |   1   |
+
 
 ### b: $Y$ represents number of heads following the first tail
 * Let $k$ be the constant number of heads following the first tail
@@ -22,10 +23,11 @@
   * When $k = 2$, possible states are TTHH, THTH, THHT, HTHH, there are 4 possible states
   * When $k = 3$, possible states are THHH, there is one possible state
 
-|$Y$|0|1|2|3|
-|---|---|---|---|---|
-|$p_X(k)$|$\frac{5}{16}$|$\frac{6}{16}$|$\frac{4}{16}$|$\frac{1}{16}$|
-|$F_X(k)$|$\frac{5}{16}$|$\frac{11}{16}$|$\frac{15}{16}$|$1$|
+| $Y$      | 0      | 1      | 2      | 3    |
+|--------|--------|--------|--------|------|
+| $p_X(k)$ | 5/16   | 6/16   | 4/16   | 1/16 |
+| $F_X(k)$ | 5/16   | 11/16  | 15/16  | 1    |
+
 
 ### c: $Z$ represents number of heads minus number of tails
 $$p_Z(-4) = \binom{4}{0, 4} * .5^4 = \frac{1}{16}$$
@@ -34,20 +36,21 @@ $$p_Z(0) = \binom{4}{2, 2} * .5^4 = \frac{6}{16}$$
 $$p_Z(2) = \binom{4}{3, 1} * .5^4 = \frac{4}{16}$$
 $$p_Z(4) = \binom{4}{4, 0} * .5^4 = \frac{1}{16}$$
 
-|$Z$|-4|-2|0|2|4|
-|---|---|---|---|---|---|
-|$p_X(k)$|$\frac{1}{16}$|$\frac{4}{16}$|$\frac{6}{16}$|$\frac{4}{16}$|$\frac{1}{16}$|
-|$F_X(k)$|$\frac{1}{16}$|$\frac{5}{16}$|$\frac{11}{16}$|$\frac{15}{16}$|$1$|
+| $Z$      | -4     | -2     | 0      | 2      | 4    |
+|--------|--------|--------|--------|--------|------|
+| $p_X(k)$ | 1/16   | 4/16   | 6/16   | 4/16   | 1/16 |
+| $F_X(k)$ | 1/16   | 5/16   | 11/16  | 15/16  | 1    |
+
 
 ### d: $W$ represents the number of tails times the number of heads
 $$p_W(0) = [\binom{4}{4, 0} + \binom{4}{0, 4}] * .5^4 = \frac{2}{16}$$
 $$p_W(3) = [\binom{4}{3, 1} + \binom{4}{1, 3}] * .5^4 = \frac{8}{16}$$
 $$p_W(4) = \binom{4}{2, 2} * .5^4 = \frac{6}{16}$$
 
-|$Z$|0|3|4|
-|---|---|---|---|
-|$p_X(k)$|$\frac{2}{16}$|$\frac{8}{16}$|$\frac{6}{16}$|
-|$F_X(k)$|$\frac{2}{16}$|$\frac{10}{16}$|$1$|
+| $W$      | 0      | 3      | 4    |
+|--------|--------|--------|------|
+| $p_X(k)$ | 2/16   | 8/16   | 6/16 |
+| $F_X(k)$ | 2/16   | 10/16  | 1    |
 
 # 2: Problem 14, Page 65
 * $X$ represents total number of attempts
